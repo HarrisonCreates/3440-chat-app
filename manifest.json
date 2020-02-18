@@ -1,6 +1,6 @@
 {
-    "short_name": "Chatty",
-    "name": "Chatty",
+    "short_name": "Harrison Chatty",
+    "name": "Harrison Chatty",
     "icons": [
       {
         "src":"icon192.png",
@@ -14,7 +14,7 @@
       }
     ],
     "start_url": "index.html",
-    "background_color": "#f00",
-    "theme_color": "#f00",
+    "background_color": "#256C8B",
+    "theme_color": "#256C8B",
     "display": "fullscreen"
   }
