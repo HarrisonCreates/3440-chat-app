@@ -10,6 +10,7 @@ h1, h2{
 
 h3, h4, h5, h6, p, textarea{
   font-family: 'Raleway';
+  font-weight: 500;
 }
 
 body{
@@ -17,3 +18,9 @@ body{
   padding: 0;
   width: 100vw;
 }
+
+/*
+
+ - Style some CSS for the thingy
+
+*/
