@@ -16,11 +16,108 @@ h3, h4, h5, h6, p, textarea{
 body{
   margin: 0;
   padding: 0;
-  width: 100vw;
 }
 
-/*
+.sidebar{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: -75vw;
+  width: 75vw;
+  height: 100vh;
+  z-index: 10;
+  background: black;
+}
 
- - Style some CSS for the thingy
+.container{
+  width: 100vw;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
 
-*/
+.container > .top_bar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6vw;
+  background: #256C8B;
+  width: 100%;
+}
+
+.container > .top_bar > h1{
+  font-size: 5vw;
+  margin: 0;
+  color: white;
+  font-weight: 500;
+  padding: 0;
+}
+
+.container > .message_space{
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+.container > .type_area{
+  margin: 0;
+  width: 100%;
+  padding: 6vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #256C8B;
+}
+
+.container > .type_area > input{
+  width: 100%;
+  background: rgba(255,255,255,0.1);
+  border-radius: 5px;
+  font-family: 'Raleway';
+  border: 0;
+  font-size: 4vw;
+  color: rgba(255,255,255, 1);
+  outline: none;
+  padding: 4vw;
+}
+
+.container > .type_area > input::placeholder{
+  color: rgba(255,255,255,0.7);
+}
+
+.container > .type_area > button{
+  width: 25vw;
+  border-radius: 1vw;
+  font-size: 4vw;
+  color: white;
+  background: rgb(57, 175, 65);
+  border: 0px;
+  color: white;
+  display: flex;
+  margin-left: 4vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4vw;
+}
+
+.container > .type_area > button > p{
+  margin: 0;
+  padding: 0;
+  letter-spacing: .125vw;
+  font-family: 'Muli';
+}
+
+@media only screen and (min-width: 768px){
+
+}
+
+@media only screen and (min-width: 1025px){
+
+}
