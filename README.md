@@ -1,1 +1,1 @@
-# 3440-chat-app
+# Chatty Peer SMS App
