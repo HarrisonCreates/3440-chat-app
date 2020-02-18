@@ -1,0 +1,20 @@
+{
+    "short_name": "Chatty",
+    "name": "Chatty",
+    "icons": [
+      {
+        "src":"icon192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "icon512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "index.html",
+    "background_color": "#f00",
+    "theme_color": "#f00",
+    "display": "fullscreen"
+  }
