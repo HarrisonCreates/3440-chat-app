@@ -1,3 +1,24 @@
+// Slidebar functionality
+
+menu_state = false;
+let sidebar = document.querySelector('.sidebar');
+
+function menu_toggle(){
+   if(!menu_state){
+     sidebar.style.left = "0vw";
+     sidebar.style.opacity = "1";
+     menu_state = true;
+   } else {
+     sidebar.style.left = "-100vw";
+     sidebar.style.opacity = "0.5";
+     menu_state = false;
+   }
+}
+
+document.querySelector('.menu_open_btn').addEventListener('click', menu_toggle);
+document.querySelector('.menu_close_btn').addEventListener('click', menu_toggle);
+
+
 if ('serviceWorker' in navigator) {
     console.log('CLIENT: service worker registration in progress.');
     navigator.serviceWorker.register('service-worker.js').then(function() {
