@@ -20,12 +20,6 @@ function menu_toggle(){
 
 messages = [];
 
-var sampleMessage = {
-  sentBy: "you",
-  dateStamp: "02/20/2020",
-  text: "REEEEEE"
-}
-
 function make_message(sender, datestamp, text){
   let message_object = {
     sentBy: sender,
@@ -58,7 +52,7 @@ function send_msg(){
   let month = curr_date.getMonth() + 1;
   let date_str = month.toString() + "/" + curr_date.getDate().toString() + "/" + curr_date.getFullYear().toString();
   make_message("you", date_str, user_input);
-  // window.navigator.vibrate(200);
+  navigator.vibrate(200);
 }
 
 document.querySelector('.menu_open_btn').addEventListener('click', menu_toggle);
