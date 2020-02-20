@@ -109,6 +109,59 @@ body{
   width: 100vw;
   height: 100vh;
   overflow: auto;
+  padding: 3vw;
+}
+
+.container > .message_space > .beginning{
+  color: rgb(140, 140, 140);
+  font-family: 'Muli';
+  font-size: 3vw;
+  line-height: 2em;
+  text-align: center;
+  margin-bottom: 5vw;
+}
+
+.container > .message_space > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  margin-top: 8vw;
+}
+
+.container > .message_space > div:first-of-type{
+  margin-top: 0;
+}
+
+.container > .message_space > div > .you{
+  align-items: flex-end;
+}
+
+.container > .message_space > div > .other{
+  align-items: flex-start;
+}
+
+.container > .message_space > div > h3{
+  font-size: 4vw;
+  font-family: 'Raleway';
+}
+
+.container > .message_space > .you > h3{
+  color: #256C8B;
+  text-align: right;
+}
+
+.container > .message_space > .other > h3{
+  color: #8b2525;
+}
+
+.container > .message_space > div > p{
+  font-size: 3.25vw;
+  text-align: justify;
+  margin-top: 2vw;
+  line-height: 1.5em;
+  font-family: 'Muli';
 }
 
 .container > .type_area{
