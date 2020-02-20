@@ -15,9 +15,13 @@ function menu_toggle(){
    }
 }
 
+function send_msg(){
+  window.navigator.vibrate(200);
+}
+
 document.querySelector('.menu_open_btn').addEventListener('click', menu_toggle);
 document.querySelector('.menu_close_btn').addEventListener('click', menu_toggle);
-
+document.querySelector('.send_btn').addEventListener('click', send_msg);
 
 if ('serviceWorker' in navigator) {
     console.log('CLIENT: service worker registration in progress.');
