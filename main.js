@@ -51,6 +51,7 @@ function make_message(sender, datestamp, text){
 
   // Clear the input
   text_input.value = "";
+  text_input.focus();
 }
 
 function send_msg(){
