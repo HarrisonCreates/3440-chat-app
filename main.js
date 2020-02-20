@@ -1,5 +1,6 @@
 message_space = document.querySelector('.message_space');
 let text_input = document.querySelector('.user_msg');
+let notification_sound = new Audio('assets/sound.mp3');
 
 navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
 
@@ -32,6 +33,7 @@ function make_message(sender, datestamp, text){
   if (navigator.vibrate) {
     navigator.vibrate(200);
   }
+  notification_sound.play();
   //console.log(messages);
   let new_message_dom = document.createElement('div');
   new_message_dom.setAttribute('class', sender);
