@@ -158,10 +158,17 @@ body{
 
 .container > .message_space > div > p{
   font-size: 3.25vw;
-  text-align: justify;
   margin-top: 2vw;
   line-height: 1.5em;
   font-family: 'Muli';
+}
+
+.container > .message_space > .you > p{
+  text-align: right;
+}
+
+.container > .message_space > .other > p{
+  text-align: left;
 }
 
 .container > .type_area{
@@ -202,6 +209,7 @@ body{
   display: flex;
   margin-left: 4vw;
   flex-direction: column;
+  outline: none;
   align-items: center;
   justify-content: center;
   padding: 4vw;

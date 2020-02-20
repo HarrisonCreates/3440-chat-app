@@ -1,3 +1,6 @@
+message_space = document.querySelector('.message_space');
+let text_input = document.querySelector('.user_msg');
+
 // Slidebar functionality
 
 menu_state = false;
@@ -15,8 +18,47 @@ function menu_toggle(){
    }
 }
 
+messages = [];
+
+var sampleMessage = {
+  sentBy: "you",
+  dateStamp: "02/20/2020",
+  text: "REEEEEE"
+}
+
+function make_message(sender, datestamp, text){
+  let message_object = {
+    sentBy: sender,
+    dateStamp: datestamp,
+    message: text
+  }
+  messages.push(message_object);
+  //console.log(messages);
+  let new_message_dom = document.createElement('div');
+  new_message_dom.setAttribute('class', sender);
+
+  let name = document.createElement('h3');
+  name.innerHTML = sender;
+
+  let final_message = document.createElement('p');
+  final_message.innerHTML = text;
+
+  new_message_dom.appendChild(name);
+  new_message_dom.appendChild(final_message);
+
+  message_space.appendChild(new_message_dom);
+
+  // Clear the input
+  text_input.value = "";
+}
+
 function send_msg(){
-  window.navigator.vibrate(200);
+  let user_input = text_input.value;
+  let curr_date = new Date();
+  let month = curr_date.getMonth() + 1;
+  let date_str = month.toString() + "/" + curr_date.getDate().toString() + "/" + curr_date.getFullYear().toString();
+  make_message("you", date_str, user_input);
+  // window.navigator.vibrate(200);
 }
 
 document.querySelector('.menu_open_btn').addEventListener('click', menu_toggle);
