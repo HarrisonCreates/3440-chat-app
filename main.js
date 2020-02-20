@@ -1,6 +1,8 @@
 message_space = document.querySelector('.message_space');
 let text_input = document.querySelector('.user_msg');
 
+navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+
 // Slidebar functionality
 
 menu_state = false;
@@ -27,6 +29,9 @@ function make_message(sender, datestamp, text){
     message: text
   }
   messages.push(message_object);
+  if (navigator.vibrate) {
+    navigator.vibrate(200);
+  }
   //console.log(messages);
   let new_message_dom = document.createElement('div');
   new_message_dom.setAttribute('class', sender);
@@ -52,7 +57,6 @@ function send_msg(){
   let month = curr_date.getMonth() + 1;
   let date_str = month.toString() + "/" + curr_date.getDate().toString() + "/" + curr_date.getFullYear().toString();
   make_message("you", date_str, user_input);
-  navigator.vibrate(200);
 }
 
 document.querySelector('.menu_open_btn').addEventListener('click', menu_toggle);
