@@ -60,7 +60,7 @@ function send_msg(){
   let curr_date = new Date();
   let month = curr_date.getMonth() + 1;
   let date_str = month.toString() + "/" + curr_date.getDate().toString() + "/" + curr_date.getFullYear().toString();
-  make_message(sender, username, date_str, user_input);
+  make_message("you", username, date_str, user_input);
 }
 
 document.querySelector('.menu_open_btn').addEventListener('click', menu_toggle);
