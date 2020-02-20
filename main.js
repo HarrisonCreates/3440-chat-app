@@ -1,6 +1,7 @@
 message_space = document.querySelector('.message_space');
 let text_input = document.querySelector('.user_msg');
 let notification_sound = new Audio('assets/sound.mp3');
+let username = "Harrison Burr";
 
 navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
 
@@ -59,7 +60,7 @@ function send_msg(){
   let curr_date = new Date();
   let month = curr_date.getMonth() + 1;
   let date_str = month.toString() + "/" + curr_date.getDate().toString() + "/" + curr_date.getFullYear().toString();
-  make_message("you", date_str, user_input);
+  make_message(username, date_str, user_input);
 }
 
 document.querySelector('.menu_open_btn').addEventListener('click', menu_toggle);
