@@ -24,7 +24,7 @@ function menu_toggle(){
 
 messages = [];
 
-function make_message(sender, datestamp, text){
+function make_message(sender, username, datestamp, text){
   let message_object = {
     sentBy: sender,
     dateStamp: datestamp,
@@ -35,12 +35,12 @@ function make_message(sender, datestamp, text){
     navigator.vibrate(200);
   }
   notification_sound.play();
-  //console.log(messages);
+
   let new_message_dom = document.createElement('div');
   new_message_dom.setAttribute('class', sender);
 
   let name = document.createElement('h3');
-  name.innerHTML = sender;
+  name.innerHTML = username;
 
   let final_message = document.createElement('p');
   final_message.innerHTML = text;
@@ -60,7 +60,7 @@ function send_msg(){
   let curr_date = new Date();
   let month = curr_date.getMonth() + 1;
   let date_str = month.toString() + "/" + curr_date.getDate().toString() + "/" + curr_date.getFullYear().toString();
-  make_message(username, date_str, user_input);
+  make_message(sender, username, date_str, user_input);
 }
 
 document.querySelector('.menu_open_btn').addEventListener('click', menu_toggle);

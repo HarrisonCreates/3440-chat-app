@@ -138,7 +138,7 @@ body{
   align-items: flex-end;
 }
 
-.container > .message_space > div > .other{
+.container > .message_space > div > div:not(.you){
   align-items: flex-start;
 }
 
@@ -152,7 +152,7 @@ body{
   text-align: right;
 }
 
-.container > .message_space > .other > h3{
+.container > .message_space > div:not(.you) > h3{
   color: #8b2525;
 }
 
@@ -167,7 +167,7 @@ body{
   text-align: right;
 }
 
-.container > .message_space > .other > p{
+.container > .message_space > div:not(.you) > p{
   text-align: left;
 }
 
