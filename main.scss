@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,500,700|Raleway:300,400,500,600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  font-family: 'Muli';
+  margin: 0;
+  padding: 0;
+}
+
+h3, h4, h5, h6, p, textarea {
+  font-family: 'Raleway';
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  opacity: 1;
+  transition: 0.6s cubic-bezier(.63, 0, .73, 1);
+  background: white;
+}
+
+.sidebar>.top_bar {
+  background: #691e45;
+  width: 100%;
+  padding: 6vw;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar>.top_bar>h1, .container>.top_bar>h1 {
+  font-size: 5vw;
+  margin: 0;
+  color: white;
+  font-weight: 500;
+  padding: 0;
+}
+
+.sidebar>.top_bar>img {
+  --size: 7vw;
+  width: var(--size);
+  height: var(--size);
+}
+
+.sidebar>.options {
+  padding: 4vw;
+}
+
+.sidebar>.options>h1 {
+  font-size: 4vw;
+  color: #888;
+  line-height: 2em;
+  letter-spacing: .04em;
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+  padding: 0;
+}
+
+.container {
+  width: 100vw;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.container>.top_bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6vw;
+  background: #256C8B;
+  width: 100%;
+}
+
+.container>.top_bar>img {
+  --size: 7vw;
+  width: var(--size);
+  height: var(--size);
+}
+
+.container>.message_space {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  padding: 3vw;
+}
+
+.container>.message_space>.beginning {
+  color: rgb(140, 140, 140);
+  font-family: 'Muli';
+  font-size: 3vw;
+  line-height: 2em;
+  text-align: center;
+  margin-bottom: 5vw;
+}
+
+.container>.message_space>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  margin-top: 8vw;
+}
+
+.container>.message_space>div:first-of-type {
+  margin-top: 0;
+}
+
+.container>.message_space>div>.you {
+  align-items: flex-end;
+}
+
+.container>.message_space>div>div:not(.you) {
+  align-items: flex-start;
+}
+
+.container>.message_space>div>h3 {
+  font-size: 4vw;
+  font-family: 'Raleway';
+}
+
+.container>.message_space>.you>h3 {
+  color: #256C8B;
+  text-align: right;
+}
+
+.container>.message_space>div:not(.you)>h3 {
+  color: #8b2525;
+}
+
+.container>.message_space>div>p {
+  font-size: 3.25vw;
+  margin-top: 2vw;
+  line-height: 1.5em;
+  font-family: 'Muli';
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.container>.message_space>.you>p {
+  text-align: right;
+}
+
+.container>.message_space>div:not(.you)>p {
+  text-align: left;
+}
+
+.container>.type_area {
+  margin: 0;
+  width: 100%;
+  padding: 6vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #256C8B;
+}
+
+.container>.type_area>input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  font-family: 'Raleway';
+  border: 0;
+  font-size: 4vw;
+  color: rgba(255, 255, 255, 1);
+  outline: none;
+  padding: 4vw;
+}
+
+.container>.type_area>input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.container>.type_area>button {
+  width: 25vw;
+  border-radius: 1vw;
+  font-size: 4vw;
+  color: white;
+  background: rgb(57, 175, 65);
+  border: 0px;
+  color: white;
+  display: flex;
+  margin-left: 4vw;
+  flex-direction: column;
+  outline: none;
+  align-items: center;
+  justify-content: center;
+  padding: 4vw;
+}
+
+.container>.type_area>button>p {
+  margin: 0;
+  padding: 0;
+  letter-spacing: .125vw;
+  font-family: 'Muli';
+}
+
+@media only screen and (min-width: 768px) {
+  .sidebar {
+    opacity: 1;
+    display: flex;
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sidebar > .top_bar > img{
+    width: 4vw;
+    height: 4vw;
+  }
+
+  .sidebar > .top_bar{
+    padding: 3vw;
+  }
+
+  .sidebar > .top_bar > h1{
+    font-size: 3vw;
+  }
+
+  .sidebar > .options > h1{
+    font-size: 2.5vw;
+    text-align: center;
+  }
+
+  .container {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    width: 100%;
+    height: 100%;
+  }
+
+  .container>.top_bar>img{
+    --size: 4vw;
+    width: var(--size);
+    height: var(--size);
+  }
+
+  .container>.top_bar, .container>.type_area {
+    padding: 3vw;
+  }
+
+  .container>.top_bar>h1 {
+    font-size: 3vw;
+  }
+
+  .container > .message_space > .beginning{
+    font-size: 2.5vw;
+  }
+
+  .container>.message_space>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 12vw;
+    padding-right: 12vw;
+    margin-top: 4vw;
+  }
+
+  .container>.message_space>div>h3 {
+    font-size: 3vw;
+    font-family: 'Raleway';
+  }
+
+  .container>.message_space>div>p {
+    font-size: 2.5vw;
+    margin-top: 2.5vw;
+    line-height: 1.5em;
+    font-family: 'Muli';
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  .container > .type_area > input{
+    font-size: 2.5vw;
+    padding: 3vw;
+  }
+
+  .container > .type_area > .send_btn{
+    padding: 3vw;
+    font-size: 2.5vw;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  body{
+    display: grid;
+    grid-template-columns: 20vw 80vw;
+    grid-template-rows: auto;
+  }
+  .sidebar {
+    opacity: 1;
+    position: static;
+    display: flex;
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sidebar > .top_bar > img, .sidebar > .top_bar > .null{
+    display: none;
+  }
+
+  .sidebar > .top_bar{
+    justify-content: center;
+  }
+
+  .sidebar > .top_bar{
+    padding: 1.5vw;
+  }
+
+  .sidebar > .top_bar > h1{
+    font-size: 1vw;
+  }
+
+  .sidebar > .options > h1{
+    font-size: 1.125vw;
+    text-align: center;
+  }
+
+  .container {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid #256C8B;
+  }
+
+  .container>.top_bar>img{
+    --size: 1vw;
+    width: var(--size);
+    height: var(--size);
+  }
+
+  .container>.top_bar, .container>.type_area {
+    padding: 1.5vw;
+  }
+
+  .container>.top_bar>h1 {
+    font-size: 1vw;
+  }
+
+  .container>.top_bar > img:nth-child(1){
+    display: none;
+  }
+
+  .container > .message_space > .beginning{
+    margin: 0;
+    padding: 0;
+    font-size: .75vw;
+    margin-bottom: 1vw;
+  }
+
+  .container>.message_space{
+    padding: 1vw;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+  }
+
+  .container>.message_space>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 1vw;
+    padding-right: 0vw;
+    margin-top: 2vw;
+  }
+
+  .container>.message_space>div>h3 {
+    font-size: 1vw;
+  }
+
+  .container>.message_space>div>p {
+    font-size: .75vw;
+    margin-top: .5vw;
+    line-height: 1.5em;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  .container>.message_space>div>div{
+    width: max-content;
+  }
+
+  .container>.message_space>div>.you {
+    align-self: flex-start;
+    align-items: flex-start;
+  }
+
+  .container>.message_space>.you>h3 {
+    color: #256C8B;
+    text-align: left;
+  }
+  .container>.message_space>.you>p {
+    text-align: left;
+  }
+
+  .container > .message_space > .type_area{
+    padding: 1vw;
+  }
+
+  .container > .type_area > input{
+    font-size: .8vw;
+    padding: 1vw;
+  }
+
+  .container > .type_area > .send_btn{
+    padding: 1vw;
+    margin-left: 2vw;
+    width: max-content;
+    border-radius: 5px;
+    font-size: 1vw;
+  }
+}
