@@ -55,11 +55,13 @@ function make_message(sender, username, datestamp, text){
 
 function send_msg(){
   let user_input = text_input.value;
-  let curr_date = new Date();
-  let month = curr_date.getMonth() + 1;
-  let date_str = month.toString() + "/" + curr_date.getDate().toString() + "/" + curr_date.getFullYear().toString();
-  make_message("you", username, date_str, user_input);
-  make_message("other", "[Auto-Responder] Bill", date_str, "Leave me alone.");
+  if(user_input.trim() != ''){
+    let curr_date = new Date();
+    let month = curr_date.getMonth() + 1;
+    let date_str = month.toString() + "/" + curr_date.getDate().toString() + "/" + curr_date.getFullYear().toString();
+    make_message("you", username, date_str, user_input);
+    make_message("other", "[Auto-Responder] Bill", date_str, "Oh... wow... yeah that's pretty cool bro... yeah I'm totally listeneing...");
+  }
 }
 
 document.querySelector('.menu_open_btn').addEventListener('click', menu_toggle);
