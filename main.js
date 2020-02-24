@@ -13,11 +13,9 @@ let sidebar = document.querySelector('.sidebar');
 function menu_toggle(){
    if(!menu_state){
      sidebar.style.left = "0vw";
-     sidebar.style.opacity = "1";
      menu_state = true;
    } else {
      sidebar.style.left = "-100vw";
-     sidebar.style.opacity = "0.5";
      menu_state = false;
    }
 }
