@@ -130,6 +130,13 @@ body {
   margin-top: 8vw;
 }
 
+.container>.message_space>div>span{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-end;
+}
+
 .container>.message_space>div:first-of-type {
   margin-top: 0;
 }
@@ -138,21 +145,37 @@ body {
   align-items: flex-end;
 }
 
-.container>.message_space>div>div:not(.you) {
+.container>.message_space>div:not(.you) {
   align-items: flex-start;
 }
 
-.container>.message_space>div>h3 {
+.container>.message_space>div>span>h3 {
   font-size: 4vw;
   font-family: 'Raleway';
 }
 
-.container>.message_space>.you>h3 {
+.container>.message_space>div>span>h5:first-of-type{
+  margin-right: 1vw;
+  margin-left: 1vw;
+  color: #ababab;
+  font-family: 'Muli';
+  font-weight: 300;
+  font-size: 3vw;
+}
+
+.container>.message_space>div>span>h5:last-of-type {
+  font-size: 3vw;
+  font-weight: 700;
+  font-family: 'Muli';
+  color: #ababab;
+}
+
+.container>.message_space>.you>span>h3 {
   color: #256C8B;
   text-align: right;
 }
 
-.container>.message_space>div:not(.you)>h3 {
+.container>.message_space>div:not(.you)>span>h3 {
   color: #8b2525;
 }
 
@@ -286,9 +309,17 @@ body {
     margin-top: 4vw;
   }
 
-  .container>.message_space>div>h3 {
+  .container>.message_space>div>span>h3 {
     font-size: 3vw;
     font-family: 'Raleway';
+  }
+
+  .container>.message_space>div>span>h5:first-of-type{
+    font-size: 2.5vw;
+  }
+
+  .container>.message_space>div>span>h5:last-of-type{
+    font-size: 2.5vw;
   }
 
   .container>.message_space>div>p {
@@ -397,8 +428,13 @@ body {
     margin-top: 2vw;
   }
 
-  .container>.message_space>div>h3 {
+  .container>.message_space>div>span{
+    justify-content: flex-start;
+  }
+
+  .container>.message_space>div>span>h3 {
     font-size: 1vw;
+    text-align: left;
   }
 
   .container>.message_space>div>p {
@@ -409,6 +445,16 @@ body {
     word-wrap: break-word;
   }
 
+  .container>.message_space>div>span>h5:first-of-type{
+    font-size: 1vw;
+    margin-left: .5vw;
+    margin-right: .5vw;
+  }
+
+  .container>.message_space>div>span>h5:last-of-type{
+    font-size: .75vw;
+  }
+
   .container>.message_space>div>div{
     width: max-content;
   }
@@ -416,9 +462,10 @@ body {
   .container>.message_space>div>.you {
     align-self: flex-start;
     align-items: flex-start;
+    text-align: left;
   }
 
-  .container>.message_space>.you>h3 {
+  .container>.message_space>.you>span>h3 {
     color: #256C8B;
     text-align: left;
   }

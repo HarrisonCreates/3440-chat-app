@@ -37,13 +37,25 @@ function make_message(sender, username, datestamp, text){
   let new_message_dom = document.createElement('div');
   new_message_dom.setAttribute('class', sender);
 
+  let header_span = document.createElement('span');
+
   let name = document.createElement('h3');
   name.innerHTML = username;
+
+  let dash = document.createElement('h5');
+  dash.innerHTML = "-";
+
+  let timestamp = document.createElement('h5');
+  timestamp.innerHTML = datestamp;
+
+  header_span.appendChild(name);
+  header_span.appendChild(dash);
+  header_span.appendChild(timestamp);
 
   let final_message = document.createElement('p');
   final_message.innerHTML = text;
 
-  new_message_dom.appendChild(name);
+  new_message_dom.appendChild(header_span);
   new_message_dom.appendChild(final_message);
 
   message_space.appendChild(new_message_dom);
