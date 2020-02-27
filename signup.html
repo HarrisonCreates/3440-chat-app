@@ -1,0 +1,114 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="signin.css">
+  <link rel="shortcut icon" href="icon192.png">
+  <link rel="apple-touch-icon" href="icon57.png" />
+  <link rel="manifest" href="manifest.json">
+  <title>Chatty Register</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <img src="assets/chatty_send.svg" alt="Chatty Logo">
+    <h1>Register With Chatty</h1>
+    <h3>(Have an account already?)<br /><a href="signin.html">Click Here</a> to sign in!</h3>
+    <form class="form">
+      <input class="firstname" type="text" required placeholder="First Name">
+      <input class="lastname" type="text" required placeholder="Last Name">
+      <input class="username" type="text" required placeholder="Desired Username...">
+      <input class="password" type="password" required placeholder="Password...">
+      <input class="submit" type="submit" value="Let's Do Dis">
+    </form>
+    <footer>
+      <p><strong>&copy; 2020</strong> Harrison Burr<p>
+    </footer>
+  </div>
+
+  <script type="text/javascript">
+    let username = document.querySelector('.username'),
+      password = document.querySelector('.password'),
+      firstname = document.querySelector('.firstname'),
+      lastname = document.querySelector('.lastname'),
+      form = document.querySelector('.form'),
+      submit = document.querySelector('.submit'),
+      firstname_flag = false,
+      lastname_flag = false,
+      username_flag = false,
+      password_flag = false,
+      already_disabled = true;
+
+    firstname.addEventListener('input', () => {
+      if (firstname.value.trim() == '') {
+        firstname_flag = false;
+        toggle_submit();
+      } else {
+        firstname_flag = true;
+        if (firstname_flag && lastname_flag && username_flag && password_flag) {
+          toggle_submit();
+        }
+      }
+    });
+
+    lastname.addEventListener('input', () => {
+      if (lastname.value.trim() == '') {
+        lastname_flag = false;
+        toggle_submit();
+      } else {
+        lastname_flag = true;
+        if (firstname_flag && lastname_flag && username_flag && password_flag) {
+          toggle_submit();
+        }
+      }
+    });
+
+    username.addEventListener('input', () => {
+      if (username.value.trim() == '') {
+        username_flag = false;
+        toggle_submit();
+      } else {
+        username_flag = true;
+        if (firstname_flag && lastname_flag && username_flag && password_flag) {
+          toggle_submit();
+        }
+      }
+    });
+
+    password.addEventListener('input', () => {
+      if (password.value.trim() == '') {
+        password_flag = false;
+        toggle_submit();
+      } else {
+        password_flag = true;
+        if (firstname_flag && lastname_flag && username_flag && password_flag) {
+          toggle_submit();
+        }
+      }
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Do Firebase user registration here. Same endpoint that the credentials are
+      // verified at. The signup page is functionally useless 'till then. For now, all
+      // this code does is stop the actual form submission.
+    });
+
+    function toggle_submit() {
+      if (firstname_flag && lastname_flag && username_flag && password_flag) {
+        submit.style.background = "rgb(4, 181, 96)";
+        submit.style.borderColor = "rgb(4, 181, 96)";
+      } else {
+        submit.style.background = "transparent";
+        submit.style.borderColor = "white";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

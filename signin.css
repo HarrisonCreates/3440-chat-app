@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:300,400,500,700|Raleway:300,400,500,600&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+h1, h2 {
+  font-family: 'Muli';
+  margin: 0;
+  padding: 0; }
+
+h3, h4, h5, h6, p, textarea {
+  font-family: 'Raleway';
+  font-weight: 500;
+  margin: 0;
+  padding: 0; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+.container {
+  background: #005291;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 8vw;
+  background-image: url("assets/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.container > img {
+  width: 20%; }
+
+.container > h1 {
+  font-size: 6vw;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+  color: white; }
+
+.container > h3 {
+  font-size: 3.5vw;
+  text-align: center;
+  color: white;
+  line-height: 2em; }
+
+.container > h3 > a {
+  color: white;
+  border: none;
+  border-bottom: 1px dotted white;
+  text-decoration: none; }
+
+.container > form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 4vw;
+  margin-bottom: 9vw; }
+
+.container > form > input {
+  outline: none; }
+
+.container > form > input:not(.submit) {
+  padding: 3vw;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  border: 0px;
+  width: 100%;
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+  font-size: 4vw;
+  font-weight: 600;
+  text-align: center;
+  font-family: 'Muli';
+  letter-spacing: 0.2vw;
+  color: #005291;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease; }
+
+.container > form > input:not(.submit)::-webkit-input-placeholder {
+  color: white;
+  font-style: italic;
+  font-weight: 500; }
+
+.container > form > input:not(.submit):-ms-input-placeholder {
+  color: white;
+  font-style: italic;
+  font-weight: 500; }
+
+.container > form > input:not(.submit)::-ms-input-placeholder {
+  color: white;
+  font-style: italic;
+  font-weight: 500; }
+
+.container > form > input:not(.submit)::placeholder {
+  color: white;
+  font-style: italic;
+  font-weight: 500; }
+
+.container > form > input:not(.submit):valid {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease; }
+
+.container > form > .submit {
+  margin-top: 3vw;
+  border: 2px solid white;
+  padding: 3vw;
+  color: white;
+  background: transparent;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: 'Muli';
+  border-radius: 25px; }
+
+.container > footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.container > footer > p {
+  color: rgba(255, 255, 255, 0.25); }

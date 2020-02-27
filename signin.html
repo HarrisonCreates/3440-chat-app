@@ -1,0 +1,93 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="signin.css">
+  <link rel="shortcut icon" href="icon192.png">
+  <link rel="apple-touch-icon" href="icon57.png" />
+  <link rel="manifest" href="manifest.json">
+  <title>Chatty Sign In</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <img src="assets/chatty_send.svg" alt="Chatty Logo">
+    <h1>Sign Into Chatty</h1>
+    <h3>(No account? No problem-o!)<br /><a href="signup.html">Click Here</a> to register!</h3>
+    <form class="form">
+      <input class="username" type="text" required placeholder="Username...">
+      <input class="password" type="password" required placeholder="Password...">
+      <input class="submit" type="submit" value="Lemme In">
+    </form>
+    <footer>
+      <p><strong>&copy; 2020</strong> Harrison Burr<p>
+    </footer>
+  </div>
+
+  <script type="text/javascript">
+    let username = document.querySelector('.username'),
+      password = document.querySelector('.password'),
+      submit = document.querySelector('.submit'),
+      form = document.querySelector('.form'),
+      username_flag = false,
+      password_flag = false,
+      already_disabled = true;
+
+    username.addEventListener('input', () => {
+      if (username.value.trim() == '') {
+        username_flag = false;
+        toggle_submit();
+      } else {
+        username_flag = true;
+        if (password_flag) {
+          toggle_submit();
+        }
+      }
+    });
+
+    password.addEventListener('input', () => {
+      if (password.value.trim() == '') {
+        password_flag = false;
+        toggle_submit();
+      } else {
+        password_flag = true;
+        if (username_flag) {
+          toggle_submit();
+        }
+      }
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Do some fancy authentication stuff here, then if credentials are good,
+      // set the below localstorage variables.
+
+      localStorage.username = username.value.trim();
+
+      // For now, I am using my name as a hard-coded localstorage parameter
+      localStorage.fullname = "Harrison Burr";
+
+      window.location = "index.html";
+
+      // Uncomment the below localstorage name with firebase retrieved account info!
+      // localStorage.fullname = firstname.value.trim() + " " + lastname.value.trim();
+    });
+
+    function toggle_submit() {
+      if (username_flag && password_flag) {
+        submit.style.background = "rgb(4, 181, 96)";
+        submit.style.borderColor = "rgb(4, 181, 96)";
+      } else {
+        submit.style.background = "transparent";
+        submit.style.borderColor = "white";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

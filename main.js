@@ -1,9 +1,21 @@
 message_space = document.querySelector('.message_space');
 let text_input = document.querySelector('.user_msg');
 let notification_sound = new Audio('assets/sound.mp3');
-let username = "Harrison Burr";
+let username = '';
+let fullname = '';
 
 navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+
+// Checking if a user is logged in. If not, redirect to sign-in page
+if(localStorage.username && localStorage.fullname){
+  // Grabbing localstorage variables to use for our content
+  username = localStorage.username;
+  fullname = localStorage.fullname;
+} else {
+  window.location = "signin.html";
+}
+
+
 
 // Slidebar functionality
 
@@ -71,7 +83,7 @@ function send_msg(){
     let curr_date = new Date();
     let month = curr_date.getMonth() + 1;
     let date_str = month.toString() + "/" + curr_date.getDate().toString() + "/" + curr_date.getFullYear().toString();
-    make_message("you", username, date_str, user_input);
+    make_message("you", fullname, date_str, user_input);
     make_message("other", "[Auto-Responder] Bill", date_str, "Oh... wow... yeah that's pretty cool bro... yeah I'm totally listening...");
   }
 }
