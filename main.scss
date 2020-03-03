@@ -64,7 +64,13 @@ body {
 }
 
 .sidebar>.options {
+  width: 100%;
+  height: 100%;
   padding: 4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .sidebar>.options>h1 {
@@ -74,8 +80,72 @@ body {
   letter-spacing: .04em;
   text-align: center;
   margin: 0;
+  margin-bottom: 1vw;
   font-weight: 500;
   padding: 0;
+}
+
+.sidebar>.options>h3 {
+  font-size: 3vw;
+  color: #888;
+  font-style: italic;
+  line-height: 2em;
+  letter-spacing: .04em;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 6vw;
+  font-weight: 500;
+  padding: 0;
+}
+
+.sidebar > .options > .profile_image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6vw;
+  cursor: pointer;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50vw;
+  background: gray;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sidebar > .options > .profile_image > input{
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+.sidebar > .options > .username_edit{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 3vw;
+  justify-content: center;
+}
+
+.sidebar > .options > .username_edit > h1{
+  color: black;
+  font-size: 5vw;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar > .options > .username_edit > input{
+  padding: 3vw;
+  color: black;
+  border-radius: 10px;
+  background: #DAD9D5;
+  font-family: 'Raleway';
+  font-size: 5vw;
+  margin-left: 5vw;
+  outline: none;
+  border: 0px;
 }
 
 .container {

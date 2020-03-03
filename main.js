@@ -3,6 +3,15 @@ let text_input = document.querySelector('.user_msg');
 let notification_sound = new Audio('assets/sound.mp3');
 let username = '';
 let fullname = '';
+let profile_pic = document.querySelector('.sidebar > .options > .profile_image');
+let profile_image_uploader = document.querySelector('.profile_image_uploader');
+let name_field = document.querySelector('.username_edit > .editable_name');
+
+name_field.value = localStorage.username;
+
+name_field.addEventListener('change', () => {
+   localStorage.username = name_field.value;
+});
 
 navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
 
@@ -15,7 +24,24 @@ if(localStorage.username && localStorage.fullname){
   window.location = "signin.html";
 }
 
+profile_image_uploader.addEventListener("change", (e) => {
+  var reader = new FileReader();
+  reader.onload = function (e) {
+    localStorage.setItem("profile_picture", e.target.result);
+    profile_pic.style.backgroundImage = "url(" + e.target.result + ")";
+  }
+  reader.readAsDataURL(e.target.files[0]);
+});
 
+if(localStorage.getItem("profile_picture")){
+   profile_pic.style.backgroundImage = "url(" + localStorage.getItem("profile_picture") + ")";
+} else {
+  profile_pic.style.backgroundImage = "url('assets/profile_default.svg')";
+}
+
+//var image = new Image();
+//image.src = localStorage.getItem("profile_picture");
+//document.body.appendChild(image);
 
 // Slidebar functionality
 
@@ -72,6 +98,8 @@ function make_message(sender, username, datestamp, text){
 
   message_space.appendChild(new_message_dom);
 
+  new_message_dom.scrollIntoView();
+
   // Clear the input
   text_input.value = "";
   text_input.focus();
@@ -83,7 +111,7 @@ function send_msg(){
     let curr_date = new Date();
     let month = curr_date.getMonth() + 1;
     let date_str = month.toString() + "/" + curr_date.getDate().toString() + "/" + curr_date.getFullYear().toString();
-    make_message("you", fullname, date_str, user_input);
+    make_message("you", localStorage.username, date_str, user_input);
     make_message("other", "[Auto-Responder] Bill", date_str, "Oh... wow... yeah that's pretty cool bro... yeah I'm totally listening...");
   }
 }
@@ -93,14 +121,14 @@ document.querySelector('.menu_close_btn').addEventListener('click', menu_toggle)
 document.querySelector('.send_btn').addEventListener('click', send_msg);
 
 if ('serviceWorker' in navigator) {
-    console.log('CLIENT: service worker registration in progress.');
+    // console.log('CLIENT: service worker registration in progress.');
     navigator.serviceWorker.register('service-worker.js').then(function() {
-      console.log('CLIENT: service worker registration complete.');
+      // console.log('CLIENT: service worker registration complete.');
     }, function() {
-      console.log('CLIENT: service worker registration failure.');
+      // console.log('CLIENT: service worker registration failure.');
     });
   } else {
-    console.log('CLIENT: service workers are not supported.');
+    // console.log('CLIENT: service workers are not supported.');
 }
 
 // ADD TO HOME SCREEN STUFF BELOW:
@@ -110,7 +138,7 @@ var deferredPrompt;
 
 // this is an event that is fired by the browser when it's about to prompt for PWA install
 window.addEventListener('beforeinstallprompt', function (e) {
-    console.log("Boudda show an install prompt.");
+    // console.log("Boudda show an install prompt.");
 
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
@@ -142,9 +170,9 @@ function addToHomeScreen() {
     .then(function(choiceResult){
 
       if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the A2HS prompt');
+      //  console.log('User accepted the A2HS prompt');
       } else {
-        console.log('User dismissed the A2HS prompt');
+        //console.log('User dismissed the A2HS prompt');
       }
 
       deferredPrompt = null;
