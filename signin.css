@@ -16,7 +16,8 @@ h3, h4, h5, h6, p, textarea {
 
 body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  overflow: hidden; }
 
 .container {
   background: #005291;

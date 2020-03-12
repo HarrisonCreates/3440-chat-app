@@ -60,6 +60,41 @@ function menu_toggle(){
 
 messages = [];
 
+function display_message(e){
+  console.log(e);
+  let new_message_dom = document.createElement('div');
+  if(e.sentBy == localStorage.username){
+    new_message_dom.setAttribute('class', "you");
+  } else {
+    new_message_dom.setAttribute('class', "other");
+  }
+
+  let header_span = document.createElement('span');
+
+  let name = document.createElement('h3');
+  name.innerHTML = e.sentBy;
+
+  let dash = document.createElement('h5');
+  dash.innerHTML = "-";
+
+  let timestamp = document.createElement('h5');
+  timestamp.innerHTML = e.dateStamp;
+
+  header_span.appendChild(name);
+  header_span.appendChild(dash);
+  header_span.appendChild(timestamp);
+
+  let final_message = document.createElement('p');
+  final_message.innerHTML = e.message;
+
+  new_message_dom.appendChild(header_span);
+  new_message_dom.appendChild(final_message);
+
+  message_space.appendChild(new_message_dom);
+
+  new_message_dom.scrollIntoView();
+}
+
 function make_message(sender, username, datestamp, text){
   let message_object = {
     sentBy: sender,
@@ -72,33 +107,7 @@ function make_message(sender, username, datestamp, text){
   }
   notification_sound.play();
 
-  let new_message_dom = document.createElement('div');
-  new_message_dom.setAttribute('class', sender);
 
-  let header_span = document.createElement('span');
-
-  let name = document.createElement('h3');
-  name.innerHTML = username;
-
-  let dash = document.createElement('h5');
-  dash.innerHTML = "-";
-
-  let timestamp = document.createElement('h5');
-  timestamp.innerHTML = datestamp;
-
-  header_span.appendChild(name);
-  header_span.appendChild(dash);
-  header_span.appendChild(timestamp);
-
-  let final_message = document.createElement('p');
-  final_message.innerHTML = text;
-
-  new_message_dom.appendChild(header_span);
-  new_message_dom.appendChild(final_message);
-
-  message_space.appendChild(new_message_dom);
-
-  new_message_dom.scrollIntoView();
 
   // Clear the input
   text_input.value = "";
@@ -112,9 +121,16 @@ function send_msg(){
     let month = curr_date.getMonth() + 1;
     let date_str = month.toString() + "/" + curr_date.getDate().toString() + "/" + curr_date.getFullYear().toString();
     make_message("you", localStorage.username, date_str, user_input);
-    make_message("other", "[Auto-Responder] Bill", date_str, "Oh... wow... yeah that's pretty cool bro... yeah I'm totally listening...");
+    let new_message = {
+      sentBy: localStorage.username,
+      dateStamp: date_str,
+      message: user_input
+    }
+    saveMessageToFirebase(new_message);
   }
 }
+
+watchFirebaseForChanges(function(msg){display_message(msg.data())});
 
 document.querySelector('.menu_open_btn').addEventListener('click', menu_toggle);
 document.querySelector('.menu_close_btn').addEventListener('click', menu_toggle);
