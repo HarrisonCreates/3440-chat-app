@@ -3,9 +3,12 @@ let text_input = document.querySelector('.user_msg');
 let notification_sound = new Audio('assets/sound.mp3');
 let username = '';
 let fullname = '';
+let dropdown = document.querySelector('.dropdown');
 let profile_pic = document.querySelector('.sidebar > .options > .profile_image');
 let profile_image_uploader = document.querySelector('.profile_image_uploader');
 let name_field = document.querySelector('.username_edit > .editable_name');
+
+localStorage.status = "Online";
 
 name_field.value = localStorage.username;
 
@@ -23,6 +26,10 @@ if(localStorage.username && localStorage.fullname){
 } else {
   window.location = "signin.html";
 }
+
+dropdown.addEventListener('change', () => {
+  localStorage.status = dropdown.value;
+});
 
 profile_image_uploader.addEventListener("change", (e) => {
   var reader = new FileReader();

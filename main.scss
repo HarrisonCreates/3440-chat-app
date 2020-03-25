@@ -121,7 +121,7 @@ body {
   background: black;
 }
 
-.sidebar > .options > .username_edit{
+.sidebar > .options > .username_edit, .sidebar > .options > .status_edit{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -129,14 +129,14 @@ body {
   justify-content: center;
 }
 
-.sidebar > .options > .username_edit > h1{
+.sidebar > .options > .username_edit > h1, .sidebar > .options > .status_edit > h1{
   color: black;
   font-size: 5vw;
   margin: 0;
   padding: 0;
 }
 
-.sidebar > .options > .username_edit > input{
+.sidebar > .options > .username_edit > input, .sidebar > .options > .status_edit > .dropdown{
   padding: 3vw;
   color: black;
   border-radius: 10px;
